@@ -9,4 +9,4 @@ cron.schedule("* * * * * *", () => {
 // * * * represents day of the month
 // * * * * represents hour
 // * * * * * represents minute
-// * * * * * * represents second
+// * * * * * * represents second (0-59)
