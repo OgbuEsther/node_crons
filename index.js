@@ -2,7 +2,7 @@ let cron = require("node-cron");
 
 //this will run the command for every second
 cron.schedule("* * * * * *", () => {
-  console.log(`Running a task every minute`);
+  //   console.log(`Running a task every minute`);
 });
 // * represents day of the week ; format : * or 0-7(where it starts from sunday and ends in sunday)
 //* * represents month ; format : * or 1-12 or jan feb..
@@ -14,15 +14,20 @@ cron.schedule("* * * * * *", () => {
 //making ranges
 
 cron.schedule("3-10 * * * * *", () => {
-  console.log(`Running a task every minute`);
+  //   console.log(`Running a task every minute`);
 });
 
 //passing your schedule to a variable
 const task = cron.schedule("* * * * * *", () => {
-  console.log(`Running`);
+  //   console.log(`Running`);
 });
 
 task.start();
 //this is run the command and start the above function
 task.stop();
 //this is run the command and stop the above function
+
+//the validate method
+const isValid = cron.validate("* * * * * *");
+console.log(isValid);
+//this is used to check if the expression passed in is valid and it will return true if it is valid or false if it isn't
